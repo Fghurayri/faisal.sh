@@ -1,30 +1,88 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+## Overview
 
-## Getting Started
+This web app serves as a blogging platform to share my knowledge and to document my learnings. 👨‍💻
 
-First, run the development server:
+I have built it using the following technologies:
+
+- [Next JS](https://nextjs.org/)
+- [Vercel](https://vercel.com/)
+- [MDX](https://mdxjs.com)
+- [Chakra UI](https://chakra-ui.com/)
+
+## Folder Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
+├── README.md
+├── next.config.js
+├── package.json
+├── public
+│   ├── favicons
+│   └── static
+├── src
+│   ├── components
+│   ├── config
+│   │   ├── seo.js
+│   │   └── theme.js
+│   ├── layouts
+│   ├── pages
+│   │   ├── _app.js
+│   │   ├── _document.js
+│   │   ├── blog
+│   │   └── index.js
+│   └── utils
+└── yarn.lock
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- All assets like images and fonts can be placed under the `public/static` directory.
+- All blog posts are placed under the `src/pages/blog` directory.
+- Special customization for SEO and the theme are placed under the `src/config` directory
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## How to run it locally
 
-## Learn More
+Please feel free to fork this blog and customize it to your liking!
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+$ git clone https://github.com/fghurayri/faisal.sh.git
+$ cd faisal.sh
+$ yarn
+$ yarn dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Please note I'm using [Fathom](https://usefathom.com/) for analytics. If you don't want such funcationality, you can remove the following lines in `src/pages/_app.js`
 
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
+```diff
+import { DefaultSeo } from "next-seo";
+.....
 
-## Deploy on Vercel
+function MyApp({ Component, pageProps }) {
+-  useEffect(() => {
+-   let tracker = window.document.createElement("script");
+-    let firstScript = window.document.getElementsByTagName("script")[0];
+-    tracker.defer = true;
+-    tracker.setAttribute("site", process.env.FATHOM_SITE_ID);
+-    tracker.setAttribute("spa", "auto");
+-    tracker.src = "https://cdn.usefathom.com/script.js";
+-    firstScript.parentNode.insertBefore(tracker, firstScript);
+-  }, []);
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  return (
+    <ThemeProvider theme={customTheme}>
+      <ColorModeProvider value="light">
+        <GlobalStyle>
+          <MDXProvider components={mdxComponents}>
+            <DefaultSeo {...SEOConfig} />
+            <BlogJsonLdSeo />
+            <Component {...pageProps} />
+          </MDXProvider>
+        </GlobalStyle>
+      </ColorModeProvider>
+    </ThemeProvider>
+  );
+}
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+export default MyApp;
+```
+
+## Acknowledgment
+
+The tooling/stack of this blog was heavliy inspired from [Lee Robinson](https://github.com/leerob/leerob.io) 🙏

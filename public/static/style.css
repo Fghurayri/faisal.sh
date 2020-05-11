@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Dubai-Bold";
+  src: url("/static/fonts/DubaiW23-Bold.woff") format("woff"),
+    url("/static/fonts/DubaiW23-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-display: auto;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Dubai-Regular";
+  src: url("/static/fonts/DubaiW23-Regular.woff") format("woff"),
+    url("/static/fonts/DubaiW23-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: auto;
+  font-style: normal;
+}

@@ -1,15 +1,35 @@
 {
   "name": "faisal.sh",
-  "version": "0.1.0",
-  "private": true,
+  "description": "Personal website and blog for Faisal Alghurayri.",
+  "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
-    "next": "9.3.6",
+    "@chakra-ui/core": "^0.7.0",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "@mdx-js/loader": "^1.6.1",
+    "@next/mdx": "^9.3.6",
+    "babel-plugin-import-glob-array": "^0.2.0",
+    "dayjs": "^1.8.26",
+    "emotion-theming": "^10.0.27",
+    "next": "^9.3.6",
+    "next-mdx-enhanced": "^2.5.0",
+    "next-seo": "^4.4.0",
+    "nprogress": "^0.2.0",
+    "parse-numeric-range": "^1.2.0",
+    "prism": "^4.1.2",
+    "prism-react-renderer": "^1.1.0",
+    "prismjs": "^1.20.0",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
-  }
+    "react-dom": "16.13.1",
+    "react-icons": "^3.10.0",
+    "react-share": "^4.1.0",
+    "react-twitter-embed": "^3.0.3",
+    "reading-time": "^1.2.0"
+  },
+  "license": "MIT"
 }
