@@ -22,7 +22,7 @@ class MyDocument extends Document {
             sizes="16x16"
             href="favicons/favicon-16x16.png"
           />
-          <link rel="manifest" href="favicons/site.webmanifest" />
+          <link rel="manifest" href="favicons/manifest.json" />
           <meta name="msapplication-config" content="/browserconfig.xml" />
           <meta name="msapplication-TileColor" content="#2D2D2D" />
           <meta name="theme-color" content="#2D2D2D" />

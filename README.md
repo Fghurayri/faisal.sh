@@ -48,7 +48,7 @@ $ yarn
 $ yarn dev
 ```
 
-Please note I'm using [Fathom](https://usefathom.com/) for analytics. If you don't want such funcationality, you can remove the following lines in `src/pages/_app.js`
+Please note I'm using [Fathom](https://usefathom.com/) for analytics. If you don't want such functionality, you can remove the following lines in `src/pages/_app.js`
 
 ```diff
 import { DefaultSeo } from "next-seo";
@@ -85,4 +85,4 @@ export default MyApp;
 
 ## Acknowledgment
 
-The tooling/stack of this blog was heavliy inspired from [Lee Robinson](https://github.com/leerob/leerob.io) 🙏
+The tooling/stack of this blog was heavily inspired from [Lee Robinson](https://github.com/leerob/leerob.io) 🙏
