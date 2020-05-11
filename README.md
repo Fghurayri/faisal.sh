@@ -15,11 +15,13 @@ I have built it using the following technologies:
 ├── README.md
 ├── next.config.js
 ├── package.json
+├── .env.example
 ├── public
 │   ├── favicons
 │   └── static
 ├── src
 │   ├── components
+│   ├── hooks
 │   ├── config
 │   │   ├── seo.js
 │   │   └── theme.js
@@ -48,22 +50,16 @@ $ yarn
 $ yarn dev
 ```
 
-Please note I'm using [Fathom](https://usefathom.com/) for analytics. If you don't want such functionality, you can remove the following lines in `src/pages/_app.js`
+Please note that I'm using Fathom for analytics. It's a great (paid) service which is GDPR friendly and easy to use. If you want to use their services, you can get yourself a Site ID and a Custom Domain using my [referral link](https://usefathom.com/ref/BTGDEP). Each can be saved as environment variables under `FATHOM_SITE_ID` and `FATHOM_CUSTOM_DOMAIN` keys.
+
+If you don't want such functionality, you can remove the custom hook `src/hooks/useFathomAnalytics.js` and its invocation in `src/pages/_app.js`
 
 ```diff
 import { DefaultSeo } from "next-seo";
 .....
 
 function MyApp({ Component, pageProps }) {
--  useEffect(() => {
--   let tracker = window.document.createElement("script");
--    let firstScript = window.document.getElementsByTagName("script")[0];
--    tracker.defer = true;
--    tracker.setAttribute("site", process.env.FATHOM_SITE_ID);
--    tracker.setAttribute("spa", "auto");
--    tracker.src = "https://cdn.usefathom.com/script.js";
--    firstScript.parentNode.insertBefore(tracker, firstScript);
--  }, []);
+-  useFathomAnalytics();
 
   return (
     <ThemeProvider theme={customTheme}>

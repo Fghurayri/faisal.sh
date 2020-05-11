@@ -15,5 +15,6 @@ module.exports = withMdxEnhanced({
 })({
   env: {
     FATHOM_SITE_ID: process.env.FATHOM_SITE_ID,
+    FATHOM_CUSTOM_DOMAIN: process.env.FATHOM_CUSTOM_DOMAIN,
   },
 });
