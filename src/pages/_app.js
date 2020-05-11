@@ -9,26 +9,19 @@ import { initNprogress } from "../config/nprogress";
 import { customTheme } from "../config/theme";
 import SEOConfig from "../config/seo";
 
+import useFathomAnalytics from "../hooks/useFathomAnalytics";
+
 // workaround to get Gherkin syntax highlighting
 (typeof global !== "undefined" ? global : window).Prism = Prism;
 require("prismjs/components/prism-gherkin");
 
 import "../../public/static/style.css";
 import "nprogress/nprogress.css";
-import { useEffect } from "react";
 
 initNprogress();
 
 function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    let tracker = window.document.createElement("script");
-    let firstScript = window.document.getElementsByTagName("script")[0];
-    tracker.defer = true;
-    tracker.setAttribute("site", process.env.FATHOM_SITE_ID);
-    tracker.setAttribute("spa", "auto");
-    tracker.src = "https://cdn.usefathom.com/script.js";
-    firstScript.parentNode.insertBefore(tracker, firstScript);
-  }, []);
+  useFathomAnalytics();
 
   return (
     <ThemeProvider theme={customTheme}>
