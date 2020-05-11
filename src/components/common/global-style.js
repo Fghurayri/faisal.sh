@@ -53,6 +53,7 @@ export const GlobalStyle = ({ children }) => {
           twitter-widget {
             max-width: 500px !important;
             width: 100% !important;
+            position: relative !important;
           }
         `}
       />
