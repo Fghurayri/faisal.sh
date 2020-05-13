@@ -3,7 +3,7 @@
   "description": "Personal website and blog for Faisal Alghurayri.",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next dev",
+    "dev": "rm -rf .mdx-data && next dev",
     "build": "next build",
     "start": "next start"
   },
