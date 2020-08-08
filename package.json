@@ -23,7 +23,7 @@
     "parse-numeric-range": "^1.2.0",
     "prism": "^4.1.2",
     "prism-react-renderer": "^1.1.0",
-    "prismjs": "^1.20.0",
+    "prismjs": "^1.21.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-icons": "^3.10.0",
